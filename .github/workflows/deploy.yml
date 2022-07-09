@@ -36,17 +36,17 @@ jobs:
       # restore nuget packages
       - name: Pre-Build
         run: |
-        chmod +x .github/scripts/preBuild.sh
-        .github/scripts/preBuild.sh
+          chmod +x .github/scripts/preBuild.sh
+          .github/scripts/preBuild.sh
         
       # build
       - name: Build
         run: |
-        chmod +x .github/scripts/build.sh
-        .github/scripts/build.sh
+          chmod +x .github/scripts/build.sh
+          .github/scripts/build.sh
   
       # post build
       - name: Post-Build
         run: |
-        chmod +x .github/scripts/postBuild.sh
-        .github/scripts/postBuild.sh
+          chmod +x .github/scripts/postBuild.sh
+          .github/scripts/postBuild.sh

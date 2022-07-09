@@ -18,7 +18,7 @@ jobs:
   # This workflow contains a single job called "build"
   build:
     # The type of runner that the job will run on
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -35,12 +35,18 @@ jobs:
         
       # restore nuget packages
       - name: Pre-Build
-        run: .github\\tools\\bash.exe .github\\scripts\\preBuild.sh
+        run: |
+        chmod +x .github/scripts/preBuild.sh
+        .github/scripts/preBuild.sh
         
       # build
       - name: Build
-        run: .github\\tools\\bash.exe .github\\scripts\\build.sh
+        run: |
+        chmod +x .github/scripts/build.sh
+        .github/scripts/build.sh
   
       # post build
       - name: Post-Build
-        run: .github\\tools\\bash.exe .github\\scripts\\postBuild.sh
+        run: |
+        chmod +x .github/scripts/postBuild.sh
+        .github/scripts/postBuild.sh
